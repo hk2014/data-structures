@@ -24,7 +24,14 @@ var LinkedList = function() {
 
   list.contains = function(target) {
     var contains = false;
-
+    var node = list.head;
+    while(node){
+    if(node.value === target){
+    contains= true;
+  }
+    node = node.next;
+  
+  }
     // while (newLastNode.next !== null) {
     //   if (newLastNode.value === target) {
     //     contains = true;
