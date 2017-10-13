@@ -32,11 +32,6 @@ var LinkedList = function() {
     node = node.next;
   
   }
-    // while (newLastNode.next !== null) {
-    //   if (newLastNode.value === target) {
-    //     contains = true;
-    //   }
-    // }
     
     return contains;
   };
