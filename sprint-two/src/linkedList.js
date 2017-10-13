@@ -4,12 +4,34 @@ var LinkedList = function() {
   list.tail = null;
 
   list.addToTail = function(value) {
+    var newLastNode = new Node(value);
+    var currentLastNode = list.tail;
+    list.tail = newLastNode;
+
+    if (list.head === null) {
+      list.head = newLastNode;
+    } else {
+      currentLastNode.next = newLastNode;    
+    }
+   
   };
 
   list.removeHead = function() {
+    var temp = list.head;
+    list.head = temp.next;
+    return temp.value;  
   };
 
   list.contains = function(target) {
+    var contains = false;
+
+    // while (newLastNode.next !== null) {
+    //   if (newLastNode.value === target) {
+    //     contains = true;
+    //   }
+    // }
+    
+    return contains;
   };
 
   return list;
@@ -23,6 +45,12 @@ var Node = function(value) {
 
   return node;
 };
+
+var circle = new LinkedList();
+circle.addToTail('a');
+circle.addToTail('b');
+//circle.contains('a');
+console.log(circle);
 
 /*
  * Complexity: What is the time complexity of the above functions?

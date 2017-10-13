@@ -9,7 +9,6 @@ var Stack = function() {
   // Implement the methods below
   someInstance.push = function(value) {
     storage[count++] = value;
-    //return count;
   };
 
   someInstance.pop = function() {
@@ -30,3 +29,17 @@ var Stack = function() {
 
   return someInstance;
 };
+
+var a = new Stack();
+a.push('a');
+a.push('b');
+
+
+console.log(a.size());
+var b = a.pop();
+console.log(b);
+
+// var arr = [1,2,3,4];
+
+// var a = arr.pop();
+// console.log(a);
