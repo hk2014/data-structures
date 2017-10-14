@@ -48,11 +48,6 @@ var Node = function(value) {
   return node;
 };
 
-var circle = new LinkedList();
-circle.addToTail('a');
-circle.addToTail('b');
-//circle.contains('a');
-console.log(circle);
 
 /*
  * Complexity: What is the time complexity of the above functions?
