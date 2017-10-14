@@ -25,8 +25,3 @@ setPrototype.remove = function(item) {
 /*
  * Complexity: What is the time complexity of the above functions?
  */
-
-var set = new Set();
-set.add('Susan Sarandon');
-set.add('Danny Glover');
-console.log(set);
