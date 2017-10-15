@@ -3,35 +3,44 @@
 var HashTable = function() {
   this._limit = 8;
   this._storage = LimitedArray(this._limit);
-  this.storages = [];
+  //this.storages = [];
 };
 
 HashTable.prototype.insert = function(k, v) {
-debugger;
-
+debugger
   var index = getIndexBelowMaxForKey(k, this._limit);
+  var bucket = [];
+  var bucket = this._storage.get(index);
+  // check if empty bucket
+    // if empty
+      // set a bucket with a tuple inside 
 
-  if (this._storage.get(index) !== undefined) {
-    this._storage.set(index, [k, v]);
-    // this.storage.set(index,this._storage.get(index));
-    
-  }
+    // if not empty
+      // check if key already present
+        // if key already there
+          // update the value of the k
 
-  
-  // if (!this.storages) {
-  //   this._storage.set(index, v);
-  //   storages.push(this._storage.get(index));
-  //   //storages.push(this._storage.get(++index));
-  // }
-  //storages.push( this._storage.get(index) );
-  
-  this._storage.set(index, v);
-  
+        // if key not present
+          // add the new tuple in your bucket
+   if (!bucket) {
+      this._storage.set(index, [k, v]);
+      
+  } else { this._storage.each(retrieve) {
+            
+          }
+       else {
+          bucket[i].push(this._storage.get(index));
+        }
+      }
+  } 
+  //this._storage.set(index, [k, v]);   
+
 };
 
 HashTable.prototype.retrieve = function(k) {
   var index = getIndexBelowMaxForKey(k, this._limit);
-  return this._storage.get(index);
+  var returnedTuple = this._storage.get(index);
+  return returnedTuple[1];
 };
 
 HashTable.prototype.remove = function(k) {
